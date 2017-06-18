@@ -27,7 +27,7 @@ Packages:
 
 - Net:
     - [requests](https://pypi.python.org/pypi/requests/)
-    - [gooletrans](https://pypi.python.org/pypi/googletrans/)
+    - [googletrans](https://pypi.python.org/pypi/googletrans/)
     - [hyper](https://pypi.python.org/pypi/hyper/) (optional)
 - Machine learning general:
   - [numpy](https://pypi.python.org/pypi/numpy/)
