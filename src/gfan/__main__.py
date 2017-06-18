@@ -13,8 +13,6 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from . import baidu_translate, google_translate, match_song_id, download_lyric, combine_translation, read_all_stop_words
 
 
