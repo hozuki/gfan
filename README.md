@@ -139,7 +139,7 @@ once again) ignored by Baidu Translate. This phrase frequently appears in animes
 is not a correct sentence in Chinese, so (s)he reads "立ち上がれる" (lit. be cheered up, original form "立ち上がる" means
 cheer up/stand up). But (s)he only knows two characters "立" (lit. stand) and "上" (lit. up/upon/above) that Chinese have,
 and (s)he thinks "振作" (lit. cheer up) suggested by Baidu Translate is nonsense. After a little "recreation", (s)he
-completes this clause as what you see ("宛若你屹立于此"), replacing "宛如" with "宛若" (their meanings are the same) and
+completes this clause as what you see ("宛若你屹立于此"), replaces "宛如" with "宛若" (their meanings are the same) and
 extends "立" to "屹立" ("stand"→"stand still and firmly") to make it a more literary expression.
 
 So translating by machine translation has a low cost and it is easy to operate: simply copy and paste, work done.
@@ -151,9 +151,9 @@ I write this little program to learn and recognize this kind of poor translation
 the Data Mining course. However, [more complicated situations](https://zhuanlan.zhihu.com/p/22973727) still need human
 reviewing.
 
-Still, the translations can be corrected by re-uploading, though this procedure takes long time and its result is uncertain.
-Some translations were poor (mostly machine translated) before, but they are replaced by new ones so the original text
-is lost in the history. For example, you can still read comments complaining translation performed by machine, like
+The translations can be corrected by re-uploading, though this procedure takes long time and its result is uncertain.
+Some translations were poor (mostly machine translated) before, but they are replaced by new ones so the original texts
+are lost in the history. For example, you can still read comments complaining translation performed by machine, like
 [this one](http://music.163.com/#/song?id=718438) (current version of translation is correct).
 
 ### So... how can I help?
