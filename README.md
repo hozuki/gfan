@@ -52,9 +52,9 @@ It is a mocking of "manual" machine translation.
 
 ### What is the motivation?
 
-On Cloud Music poor translations can often be seen. A optimistic assumption is that, these low quality translations are
-mainly contributed by people who does not actually understand the source language. Based on this assumption, those people
-would use machine translations for help, and modify some words to make it more "natural".
+You can sometimes see poor translations on Cloud Music. An optimistic assumption is that, these low quality translations are
+mainly contributed by people who do not actually understand the source language. Based on this assumption, those people
+would turn to machine translations for help, and modify some words to make it more "natural".
 
 Let's see how this works. This behavior is mostly seen on Japanese-Chinese translations. There are kanjis (jp: 漢字) in
 Japanese, which are often the in the characters' traditional writing (zh: 繁体字) or variants (zh: 异体字) in modern Chinese.
