@@ -80,9 +80,9 @@ So those people read the text, throw away characters they can't understand and r
 >
 > 如同被激励了一般
 >
-> 成为将世界染上色彩
+> 成为将世界染上色彩的
 >
-> 的小小花朵吧
+> 小小花朵吧
 
 **Translation (English):**
 
@@ -110,7 +110,7 @@ Now let's see how the others perform.
 >
 > 染上了世界 (be painted with the world)
 >
-> 成了小小的花 (become small flowers)
+> 成了小小的花 (became small flowers)
 
 **Google Translate:**
 
@@ -124,23 +124,23 @@ Now let's see how the others perform.
 
 **Incorrect translation:** (on the same page of the lyrics)
 
-> 总有一天 再一次 (oneday in the future, again)
+> 总有一天 再一次 (one day in the future, again)
 >
 > 宛若你屹立于此 (as if you stand still here)
 >
 > 染上了世界 (be painted with the world)
 >
-> 成了小小的花 (become small flowers)
+> 成了小小的花 (became small flowers)
 
-You can obviously see the similarity between the incorrect translation and the text Baidu Translate prints out.
+You can clearly see the similarity between the incorrect translation and the text Baidu Translate prints out.
 
 The differences can be easily explained too. That user knows a little Japanese so (s)he hears/sees "もう一度" (lit.
 once again) ignored by Baidu Translate. This phrase frequently appears in animes so it is easy to recognize. "宛如你振作"
 is not a correct sentence in Chinese, so (s)he reads "立ち上がれる" (lit. be cheered up, original form "立ち上がる" means
 cheer up/stand up). But (s)he only knows two characters "立" (lit. stand) and "上" (lit. up/upon/above) that Chinese have,
 and (s)he thinks "振作" (lit. cheer up) suggested by Baidu Translate is nonsense. After a little "recreation", (s)he
-completes this clause as what you see ("宛若你屹立于此"), replaces "宛如" with "宛若" (their meanings are the same) and
-extends "立" to "屹立" ("stand"→"stand still and firmly") to make it a more literary expression.
+completes this clause as what you see ("宛若你屹立于此"), replacing "宛如" with "宛若" (their meanings are the same) and
+extending "立" to "屹立" ("stand"→"stand still and firmly") to make it a more literary expression.
 
 So translating by machine translation has a low cost and it is easy to operate: simply copy and paste, work done.
 Although there are lyrics/translation reviewers on Cloud Music, their capabilities vary. With a low chance, machine
