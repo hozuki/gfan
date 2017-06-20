@@ -1,6 +1,8 @@
 is_correct,id,comment
 0,445450086,成名不如回家
 0,http://music.163.com/#/m/song?id=28482417,
+0,http://music.163.com/#/song?id=27570580,contrib. @紫晓
+0,http://music.163.com/#/song?id=764790,contrib. @紫晓
 1,467595042,
 1,http://music.163.com/#/m/song?id=28018269,
 1,http://music.163.com/#/m/song?id=33887512,
