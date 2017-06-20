@@ -60,6 +60,7 @@ def preprocess(skip_existing: bool = True) -> None:
 
         # Prepare to save results from auto translation tools.
         """From here on, all training sets are 'negative'."""
+        auto_translated = False
         base_dir = base_dir_tpl.format("neg")
         os.makedirs(base_dir, mode=0o642, exist_ok=True)
 
@@ -75,6 +76,8 @@ def preprocess(skip_existing: bool = True) -> None:
 
             with open(fn, mode="w", encoding="utf-8") as fd:
                 fd.write(translation)
+
+            auto_translated = True
         else:
             print("(Skipped)")
 
@@ -90,10 +93,13 @@ def preprocess(skip_existing: bool = True) -> None:
 
             with open(fn, mode="w", encoding="utf-8") as fd:
                 fd.write(translation)
+
+            auto_translated = True
         else:
             print("(Skipped)")
 
-        time.sleep(0.5)
+        if auto_translated:
+            time.sleep(0.5)
 
     print("Preprocessing complete.")
 
@@ -124,9 +130,11 @@ def train_dataset() -> None:
         print("True positive rate: {}".format(np.mean(y_pred == y_test)))
 
         test_set_size = len(y_test)
+        print("Test set size: ", test_set_size)
+
+        print("* Before probability correction")
         bins = np.bincount(y_pred)
         bins_len = len(bins)
-        print("Test set size: ", test_set_size)
         for i, label_name in enumerate(label_names):
             if i < bins_len:
                 print("Count of class {} ({}): {}".format(i, label_name, bins[i]))
@@ -135,7 +143,7 @@ def train_dataset() -> None:
         class_prob = clf.predict_proba(x_test)
         class_prob = class_prob[:, 0]  # based on the assumption that categories are [neg, pos]
 
-        report = np.ndarray((test_set_size,))
+        report = np.ndarray((test_set_size,), dtype=np.int)
         for i in range(test_set_size):
             prob: np.float64 = class_prob[i]
             # Threshold 0.8 (all predictions are class 0) is... counter-intuitive.
@@ -148,6 +156,21 @@ def train_dataset() -> None:
                 cls = 1  # pos
             report[i] = cls
 
+        print("* After probability correction")
+        bins = np.bincount(report)
+        bins_len = len(bins)
+        for i, label_name in enumerate(label_names):
+            if i < bins_len:
+                print("Count of class {} ({}): {}".format(i, label_name, bins[i]))
+
+        print("* Actual")
+        bins = np.bincount(y_test)
+        bins_len = len(bins)
+        for i, label_name in enumerate(label_names):
+            if i < bins_len:
+                print("Count of class {} ({}): {}".format(i, label_name, bins[i]))
+
+        print()
         print(classification_report(y_test, report, target_names=label_names))
 
 
