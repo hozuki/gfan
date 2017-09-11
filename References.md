@@ -4,3 +4,4 @@
 - http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html
 - http://blog.csdn.net/lsldd/article/details/41520953
 - https://github.com/SunnyMarkLiu/NaiveBayesSpamFilter
+- http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/

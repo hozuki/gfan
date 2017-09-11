@@ -42,7 +42,7 @@ class CloudMusicLyricResponseObject:
     translation: List[str]
 
 
-def build_cmlrc_object(d: Dict[Any, Any]) -> CloudMusicLyricResponseObject:
+def _build_cmlrc_object(d: Dict[Any, Any]) -> CloudMusicLyricResponseObject:
     def build_userinfo_object(d: Dict[Any, Any]) -> CloudMusicLyricResponseObject.UserInfo:
         r = CloudMusicLyricResponseObject.UserInfo()
         r.id = d["id"]
@@ -134,30 +134,26 @@ def download_lyric(song_id: int, use_cache: bool = True, cache_dir="data/lrc", s
 
     try:
         d: Dict[Any, Any] = json.loads(json_text)
-        obj: CloudMusicLyricResponseObject = build_cmlrc_object(d)
+        obj: CloudMusicLyricResponseObject = _build_cmlrc_object(d)
         return obj
     except ValueError as ex:
         logging.error(ex)
         return None
 
 
-# text_stop = re.compile(r"[ !@#$%^&*()+-={}\[\]|\\:;\"'<>,.?/`~]")
-
-
 def combine_translation(translation: List[str]) -> str:
     tr = "\n".join(translation)
-    # tr = text_stop.sub("", tr)
     return tr
 
 
-cloud_music_id_format = re.compile(r"song\?id=([\d]+)")
+_cloud_music_id_format = re.compile(r"song\?id=([\d]+)")
 
 
 def match_song_id(song_id: Union[int, str]) -> int:
     try:
         song_id = int(song_id)
     except ValueError:
-        ids = cloud_music_id_format.findall(song_id)
+        ids = _cloud_music_id_format.findall(song_id)
         song_id = ids[0] if len(ids) == 1 else None
 
     if song_id is None:
