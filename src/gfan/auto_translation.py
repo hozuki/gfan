@@ -15,11 +15,19 @@ class BaiduTranslationResult:
         src: str
 
     def __init__(self, root: Dict[str, any]):
+        self.data = []
+
+        if root["error"] is not None and int(root["error"]):
+            # Baidu now has two extra fields, "token" and "sign".
+            # "token" is statically written (as inline <script> in HTML) into 'window.common' object.
+            # "sign" hashes some request fields.
+            # I don't want to waste my time analyzing this *, because I don't have the need to do it.
+            return
+
         o = root["trans_result"]
         self.lang_from = o["from"]
         self.lang_to = o["to"]
         self.status = int(o["status"])
-        self.data = []
         for entry in o["data"]:
             e2 = BaiduTranslationResult.SimplifiedDataEntry()
             e2.dst = entry["dst"]
@@ -45,6 +53,14 @@ def baidu_translate(o: CloudMusicLyricResponseObject, lang_from: str = "jp", lan
         "trans_type": "realtime",
         "simple_means_flag": str(3)
     }
+
+    # if session is not None:
+    #     session.headers["User-Agent"] = \
+    #         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
+    #         " Chrome/59.0.3071.104 Safari/537.36"
+    #     session.headers["Referer"] = "http://fanyi.baidu.com"
+    #     session.headers["Origin"] = "http://fanyi.baidu.com"
+    #     session.headers["X-Requested-With"] = "XMLHttpRequest"
 
     try:
         if session is None:
